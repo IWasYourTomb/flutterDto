@@ -13,29 +13,29 @@ class HomeScreen extends StatelessWidget {
     return Scaffold(
       body: Container(
         margin: const EdgeInsets.all(8.0),
-          child: BlocListener<CovidBloc, CovidState>(
-            listener: (context, state) {
-              if (state is CovidError) {
-                ScaffoldMessenger.of(context)
-                    .showSnackBar(SnackBar(content: Text(state.message!)));
+        child: BlocListener<CovidBloc, CovidState>(
+          listener: (context, state) {
+            if (state is CovidError) {
+              ScaffoldMessenger.of(context)
+                  .showSnackBar(SnackBar(content: Text(state.message!)));
+            }
+          },
+          child: BlocBuilder<CovidBloc, CovidState>(
+            builder: (context, state) {
+              if (state is CovidInitial) {
+                return loading();
+              } else if (state is CovidLoading) {
+                return loading();
+              } else if (state is CovidLoaded) {
+                return cardList(context, state.covidModel);
+              } else if (state is CovidError) {
+                return error();
               }
+              return Container();
             },
-            child: BlocBuilder<CovidBloc, CovidState>(
-              builder: (context, state) {
-                if (state is CovidInitial) {
-                  return loading();
-                } else if (state is CovidLoading) {
-                  return loading();
-                } else if (state is CovidLoaded) {
-                  return cardList(context, state.covidModel);
-                } else if (state is CovidError) {
-                  return error();
-                }
-                return Container();
-              },
-            ),
           ),
         ),
+      ),
     );
   }
 }

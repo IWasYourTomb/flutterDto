@@ -20,6 +20,6 @@ class GlobalDto {
   final int? newRecovered;
   final int? totalRecovered;
 
-  factory GlobalDto.fromJson(Map<String,dynamic> json) =>
+  factory GlobalDto.fromJson(Map<String, dynamic> json) =>
       _$GlobalDtoFromJson(json);
 }
