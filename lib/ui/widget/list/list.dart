@@ -1,5 +1,5 @@
 import 'package:apiwithbloc/bloc/covid_bloc/covid_bloc.dart';
-import 'package:apiwithbloc/utils/bloc_inital.dart';
+import 'package:apiwithbloc/utils/bloc/bloc_inital.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 

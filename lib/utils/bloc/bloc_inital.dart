@@ -1,4 +1,5 @@
 import 'package:apiwithbloc/bloc/covid_bloc/covid_bloc.dart';
+import 'package:apiwithbloc/bloc/theme_bloc/theme_bloc.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -8,7 +9,8 @@ class BlocInitial {
   static final List<BlocProvider> bloc = [
     BlocProvider<CovidBloc>(
       create: (_) => CovidBloc()..add(GetCovidList()),
-    )
+    ),
+    BlocProvider<ThemeBloc>(create: (_) => ThemeBloc())
   ];
 
   static final List<BlocListener> listener = [

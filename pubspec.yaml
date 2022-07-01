@@ -38,6 +38,7 @@ dependencies:
   dio: any
   equatable: any
   json_annotation: ^4.0.1
+  shared_preferences: any
 
 
 dev_dependencies:
