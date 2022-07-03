@@ -19,6 +19,7 @@ class CovidBlocObservable extends BlocObserver{
 
   }
 
+  @override
   void onError(BlocBase bloc, Object error, StackTrace stackTrace){
     log('[${bloc.runtimeType}]', name: _name, error: error, stackTrace: stackTrace);
     super.onError(bloc, error, stackTrace);
