@@ -11,10 +11,10 @@ final ApiRepository apiRepository = ApiRepository();
 
 class CovidBloc extends Bloc<CovidEvent, CovidState> {
   CovidBloc() : super(CovidInitial()) {
-    on<GetCovidList>(_GetCovidList);
+    on<GetCovidList>(_getCovidList);
   }
 
-  void _GetCovidList(GetCovidList event, Emitter<CovidState> emit) async {
+  void _getCovidList(GetCovidList event, Emitter<CovidState> emit) async {
     try {
       emit(CovidLoading());
       final mList = await apiRepository.getCovidList();

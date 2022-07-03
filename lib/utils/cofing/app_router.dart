@@ -15,7 +15,7 @@ class AppRouter {
   }
 
   static final Map<String, RouteBuilder> routes = {
-    HomeScreen.id: (_, __) => HomeScreen(),
-    SettingScreen.id: (_, __) => SettingScreen(),
+    HomeScreen.id: (_, __) => const HomeScreen(),
+    SettingScreen.id: (_, __) => const SettingScreen(),
   };
 }
