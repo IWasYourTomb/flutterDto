@@ -7,20 +7,23 @@ part 'covid_event.dart';
 
 part 'covid_state.dart';
 
+final ApiRepository apiRepository = ApiRepository();
+
 class CovidBloc extends Bloc<CovidEvent, CovidState> {
   CovidBloc() : super(CovidInitial()) {
-    final ApiRepository apiRepository = ApiRepository();
-    on<GetCovidList>((event, emit) async {
-      try {
-        emit(CovidLoading());
-        final mList = await apiRepository.getCovidList();
-        emit(CovidLoaded(mList));
-        if (mList.error != null) {
-          emit(CovidError(mList.error));
-        }
-      } on NetworkError {
-        emit(const CovidError('Connection error'));
+    on<GetCovidList>(_GetCovidList);
+  }
+
+  void _GetCovidList(GetCovidList event, Emitter<CovidState> emit) async {
+    try {
+      emit(CovidLoading());
+      final mList = await apiRepository.getCovidList();
+      emit(CovidLoaded(mList));
+      if (mList.error != null) {
+        emit(CovidError(mList.error));
       }
-    });
+    } on NetworkError {
+      emit(const CovidError('Connection error'));
+    }
   }
 }
