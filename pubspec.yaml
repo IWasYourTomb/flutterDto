@@ -39,6 +39,8 @@ dependencies:
   equatable: any
   json_annotation: ^4.0.1
   shared_preferences: any
+  hydrated_bloc: any
+  path_provider: any
 
 
 dev_dependencies:
