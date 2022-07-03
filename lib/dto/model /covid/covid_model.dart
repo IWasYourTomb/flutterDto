@@ -1,7 +1,9 @@
 import 'package:apiwithbloc/dto/model%20/countries/countries_model.dart';
 import 'package:apiwithbloc/dto/model%20/global/global_model.dart';
 import 'package:equatable/equatable.dart';
+import 'package:flutter/material.dart';
 
+@immutable
 class Covid extends Equatable {
   Global? global;
   List<Countries>? countries;
