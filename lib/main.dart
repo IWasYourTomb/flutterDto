@@ -18,3 +18,4 @@ void main() async {
 Future<void> init() async {
   await Preferences().init();
 }
+

@@ -1,5 +1,6 @@
 import 'package:apiwithbloc/bloc/theme_bloc/theme_bloc.dart';
-import 'package:apiwithbloc/ui/screen/home/home_screen.dart';
+import 'package:apiwithbloc/ui/screen/navigation/root_sreen.dart';
+
 import 'package:apiwithbloc/utils/bloc/bloc_inital.dart';
 import 'package:apiwithbloc/utils/cofing/app_router.dart';
 import 'package:flutter/material.dart';
@@ -27,7 +28,7 @@ class MyApp extends StatelessWidget {
             },
             debugShowCheckedModeBanner: false,
             theme: state.theme.themeData,
-            home: HomeScreen(),
+            home: const RootScreen(),
           );
         },
       ),

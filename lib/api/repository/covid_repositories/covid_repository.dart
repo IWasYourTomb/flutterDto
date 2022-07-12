@@ -1,7 +1,7 @@
-import 'package:apiwithbloc/api/provider/api_provider.dart';
+import 'package:apiwithbloc/api/provider/covid_provides/covid_provider.dart';
 import 'package:apiwithbloc/dto/model%20/covid/covid_model.dart';
 
-class ApiRepository {
+class CovidRepository {
   final _provider = ApiProvider();
 
   Future<Covid> getCovidList() async {

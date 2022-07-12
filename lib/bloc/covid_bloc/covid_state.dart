@@ -15,6 +15,9 @@ class CovidLoaded extends CovidState {
   final Covid covidModel;
 
   const CovidLoaded(this.covidModel);
+
+  @override
+  List<Object> get props => [covidModel];
 }
 
 class CovidError extends CovidState {

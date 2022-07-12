@@ -41,6 +41,8 @@ dependencies:
   shared_preferences: any
   hydrated_bloc: any
   path_provider: any
+  simple_animations: any
+  supercharged: any
 
 
 dev_dependencies:

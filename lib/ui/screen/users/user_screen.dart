@@ -1,19 +1,17 @@
-import 'package:apiwithbloc/ui/screen/home/widget/list_home/list.dart';
 import 'package:apiwithbloc/ui/screen/settings/settings_screen.dart';
+import 'package:apiwithbloc/ui/screen/users/widget/list_user/list_user.dart';
 import 'package:apiwithbloc/utils/cofing/app_router.dart';
 import 'package:flutter/material.dart';
 
-class HomeScreen extends StatelessWidget {
-  static const id = '/home';
-  static int? selectedIndex = 0;
-
-  const HomeScreen({Key? key}) : super(key: key);
+class UserScreen extends StatelessWidget {
+  static const id = '/users';
+  const UserScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Home'),
+        title: const Text('Users'),
         actions: [
           IconButton(
               onPressed: () {
@@ -22,7 +20,7 @@ class HomeScreen extends StatelessWidget {
               icon: const Icon(Icons.settings))
         ],
       ),
-      body: listHome(),
+      body: listUser(),
     );
   }
 }
