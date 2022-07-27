@@ -1,4 +1,6 @@
 import 'package:apiwithbloc/dto/model%20/covid/covid_model.dart';
+import 'package:apiwithbloc/ui/widget/scroll/sroll_behavior.dart';
+
 import 'package:flutter/material.dart';
 
 Widget cardHomeList(BuildContext context, Covid model) {
@@ -12,7 +14,6 @@ Widget cardHomeList(BuildContext context, Covid model) {
             itemCount: model.countries!.length,
             itemBuilder: (context, index) {
               return Container(
-
                 margin: const EdgeInsets.all(8.0),
                 child: GestureDetector(
                   child: Card(
@@ -41,9 +42,4 @@ Widget cardHomeList(BuildContext context, Covid model) {
   ]);
 }
 
-class ScrollLeftBehavior extends ScrollBehavior {
-  Widget buildViewportChrome(
-      BuildContext context, Widget child, AxisDirection axisDirection) {
-    return child;
-  }
-}
+

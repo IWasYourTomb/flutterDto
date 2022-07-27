@@ -43,6 +43,7 @@ dependencies:
   path_provider: any
   simple_animations: any
   supercharged: any
+  pull_to_refresh: any
 
 
 dev_dependencies:

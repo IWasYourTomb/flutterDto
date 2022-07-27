@@ -1,6 +1,6 @@
 import 'package:apiwithbloc/dto/model%20/user/user.dart';
 import 'package:apiwithbloc/ui/screen/users/users_detail.dart';
-import 'package:apiwithbloc/utils/cofing/app_router.dart';
+import 'package:apiwithbloc/ui/widget/scroll/sroll_behavior.dart';
 import 'package:flutter/material.dart';
 
 
@@ -61,9 +61,4 @@ Widget cardUserList(BuildContext context, Users model) {
   ]);
 }
 
-class ScrollLeftBehavior extends ScrollBehavior {
-  Widget buildViewportChrome(
-      BuildContext context, Widget child, AxisDirection axisDirection) {
-    return child;
-  }
-}
+

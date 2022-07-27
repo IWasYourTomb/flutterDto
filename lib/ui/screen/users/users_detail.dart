@@ -14,29 +14,39 @@ class UserDetail extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: const Text('About User'),
+          elevation: 0,
+          backgroundColor: Colors.transparent,
         ),
-        body: FadeAnimation(
-                delay: 0.5,
+        extendBodyBehindAppBar: true,
+        body: Column(
+          children: [
+            SizedBox(
+              height: MediaQuery.of(context).size.height / 2,
+              child: FadeAnimation(
+                delay: 0.7,
+                child: Container(
+                  decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(15.0),
+                      image: DecorationImage(
+                          image: NetworkImage(
+                              users.results![index].picture!.large!),
+                          fit: BoxFit.cover)),
+                ),
+              )
+            ),
+            FadeAnimation(
+                delay: 0.1,
                 child: Column(
-                  children: <Widget>[
-                    Center(
-                      child: Padding(
-                        padding: const EdgeInsets.all(10),
-                        child: SizedBox(
-                            width: 120,
-                            height: 120,
-                            child:
-                            Image.network(users.results![index].picture!.large!)),
-                      ),
-                    ),
-                   const Divider(color: Colors.black,),
-                    Text('Name:${users.results![index].name!.first!}', style: const TextStyle(fontSize: 20)),
-                    Text('Email: ${users.results![index].email!}', style: const TextStyle(fontSize: 20)),
-                    Text('Gender: ${users.results![index].gender!}', style: const TextStyle(fontSize: 20)),
-                    Text('Username: ${users.results![index].login!.username!}', style: const TextStyle(fontSize: 20)),
-                  ],
-                ))
-        );
+                      children: [
+                        Text('${users.results![index].name!.first!} ${users.results![index].name!.last!}', style: const TextStyle(fontSize: 20)),
+                        Text('Email:${users.results![index].email!}', style: const TextStyle(fontSize: 20)),
+                        Text('Gender: ${users.results![index].gender!}', style: const TextStyle(fontSize: 20)),
+                        Text('Username: ${users.results![index].login!.username!}', style: const TextStyle(fontSize: 20)),
+                        Text('Age: ${users.results![index].dob!.age.toString()}', style: const TextStyle(fontSize: 20)),
+                      ],
+                  )
+            )
+          ],
+        ));
   }
 }
