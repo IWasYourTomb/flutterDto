@@ -13,10 +13,10 @@ final UsersRepository apiRepository = UsersRepository();
 
 class UsersBloc extends Bloc<UsersEvent, UsersState> {
   UsersBloc() : super(UsersInitial()) {
-    on<GetUserList>(_getCovidList);
+    on<GetUserList>(_getUserList);
   }
 
-  void _getCovidList(GetUserList event, Emitter<UsersState> emit) async {
+  void _getUserList(GetUserList event, Emitter<UsersState> emit) async {
     try {
       emit(UsersLoading());
       final mList = await apiRepository.getUserList();
